@@ -15,10 +15,7 @@
 <!-- Initialize the editor. -->
 <script>
 $(function() {
-    $('textarea').froalaEditor({
-        height : 300,
-        width : '85%',
-    });
+    initWYSIWYG('textarea');
 });
 </script>
 @endsection
