@@ -34,4 +34,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/create', ['as' => 'topic.create', 'uses' => 'TopicController@create']);
         Route::post('/create', 'TopicController@save');
     });
+
+    Route::prefix('post')->group(function() {
+        Route::post('/create', ['as' => 'post.create', 'uses' => 'PostController@save']);
+    });
 });

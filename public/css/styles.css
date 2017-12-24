@@ -76,3 +76,7 @@ h1 {
 .topiclist .topic-by a {
     color: #454545;
 }
+
+.postbody .topic-post {
+    min-height: 120px;
+}
