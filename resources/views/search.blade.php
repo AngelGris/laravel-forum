@@ -12,6 +12,9 @@
                 </fieldset>
             </form>
         </div>
+        <div>
+            {{ $results->render() }}
+        </div>
         <div class="content">
             @forelse($results as $result)
                 @if ($result instanceOf \App\Topic)
