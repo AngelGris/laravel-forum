@@ -109,15 +109,10 @@ class User extends Authenticatable
      */
     public function getPostsPerDayAttribute()
     {
-        $days = Carbon::now()->diffInDays($this->created_at);
+        $days = Carbon::now()->diffInDays($this->created_at) + 1;
         $count = $this->posts()->count();
-        $output = 0;
 
-        if ($days > 0) {
-            $output = $count / $days;
-        }
-
-        return number_format($output, 2);
+        return number_format($count / $days, 2);
     }
 
     /**
@@ -157,14 +152,9 @@ class User extends Authenticatable
      */
     public function getTopicsPerDayAttribute()
     {
-        $days = Carbon::now()->diffInDays($this->created_at);
+        $days = Carbon::now()->diffInDays($this->created_at) + 1;
         $count = $this->topics()->count();
-        $output = 0;
 
-        if ($days > 0) {
-            $output = $count / $days;
-        }
-
-        return number_format($output, 2);
+        return number_format($count / $days, 2);
     }
 }
