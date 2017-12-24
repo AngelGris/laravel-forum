@@ -25,12 +25,10 @@
                             <h1>VanHack Forum</h1>
                         </div>
                         <div id="search-box" class="search-box search-header" role="search">
-                            <form action="./search.php?style=10" method="get" id="search">
+                            <form action="{{ route('search') }}" method="get">
                                 <fieldset>
-                                    <input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…" />
+                                    <input name="q" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…" />
                                     <button class="button icon-button search-icon" type="submit" title="Search">Search</button>
-                                    <a href="#" class="button icon-button search-adv-icon" title="Advanced search">Advanced search</a>
-                                    <input type="hidden" name="style" value="10" />
                                 </fieldset>
                             </form>
                         </div>

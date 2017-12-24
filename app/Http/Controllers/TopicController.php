@@ -22,7 +22,11 @@ class TopicController extends Controller
      */
     public function index(Topic $topic)
     {
-        return view('topic.index', ['topic' => $topic]);
+        $posts = $topic->posts()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
+        return view('topic.index', [
+            'topic' => $topic,
+            'posts' => $posts
+        ]);
     }
 
     /**

@@ -17,6 +17,7 @@ Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
 Route::get('/faq', function() {
     return view('faq');
 })->name('faq');
+Route::get('/search', ['as' => 'search', 'uses' => 'HomeController@search']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::prefix('profile')->group(function() {

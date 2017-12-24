@@ -51,7 +51,11 @@ $(function() {
         </div>
     </div>
 </div>
-@foreach($topic->posts as $post)
+<div>
+    {{ $posts->render() }}
+    <div class="clear"></div>
+</div>
+@foreach($posts as $post)
 <div class="post has-profile bg2">
     <div class="inner">
         <dl class="postprofile">
@@ -77,6 +81,10 @@ $(function() {
     </div>
 </div>
 @endforeach
+<div>
+    {{ $posts->render() }}
+    <div class="clear"></div>
+</div>
 <div class="post bg2">
     <div class="inner">
         <h4>Reply to this topic</h4>
