@@ -41,10 +41,8 @@
                     <dd class="lastpost">
                         @if(count($topic->posts) > 0)
                         <span>
-                            <dfn>Last post</dfn>
-                            <a href="./viewtopic.php?style=10&amp;f=2&amp;p=2#p2" title="Welcome" class="lastsubject">Welcome</a> <br />
-                            by <a href="./memberlist.php?style=10&amp;mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">Gramziu</a>
-                            <a href="./viewtopic.php?style=10&amp;f=2&amp;p=2#p2"><span class="imageset icon_topic_latest" title="View the latest post">View the latest post</span></a> <br />24 Feb 2015, 21:50
+                            {{ $topic->last_post->created_at->format('d M Y, H:i') }}<br />
+                            by <a href="{{ route('profile', $topic->last_post->author->id) }}" class="username-coloured">{{ $topic->last_post->author->user_name }}</a>
                         </span>
                         @endif
                     </dd>
