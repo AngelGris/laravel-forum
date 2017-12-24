@@ -56,3 +56,7 @@ h1 {
 #picture-upload img {
     width: 20px;
 }
+
+.pagination {
+    float: left;
+}

@@ -19,11 +19,19 @@ Route::get('/faq', function() {
 })->name('faq');
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/profile/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
-    Route::get('/profile/edit', ['as' => 'profile.edit', 'uses' => 'UserController@edit']);
-    Route::patch('/profile/edit', 'UserController@update');
-    Route::post('/profile/picture', ['as' => 'profile.picture', 'uses' => 'UserController@uploadProfilePicture']);
-    Route::get('/profile/picture/delete', ['as' => 'profile.picture.delete', 'uses' => 'UserController@deleteProfilePicture']);
-    Route::get('/profile/password/edit', ['as' => 'profile.password.edit', 'uses' => 'UserController@editPassword']);
-    Route::patch('/profile/password/edit', 'UserController@updatePassword');
+    Route::prefix('profile')->group(function() {
+        Route::get('/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
+        Route::get('/edit', ['as' => 'profile.edit', 'uses' => 'UserController@edit']);
+        Route::patch('/edit', 'UserController@update');
+        Route::post('/picture', ['as' => 'profile.picture', 'uses' => 'UserController@uploadProfilePicture']);
+        Route::get('/picture/delete', ['as' => 'profile.picture.delete', 'uses' => 'UserController@deleteProfilePicture']);
+        Route::get('/password/edit', ['as' => 'profile.password.edit', 'uses' => 'UserController@editPassword']);
+        Route::patch('/password/edit', 'UserController@updatePassword');
+    });
+
+    Route::prefix('topic')->group(function() {
+        Route::get('/{topic}', ['as' => 'topic', 'uses' => 'TopicController@index'])->where('topic', '[0-9]+');
+        Route::get('/create', ['as' => 'topic.create', 'uses' => 'TopicController@create']);
+        Route::post('/create', 'TopicController@save');
+    });
 });

@@ -4,10 +4,10 @@
 @include('modules.sidebar')
 <div class="action-bar top">
     <div class="buttons">
-        <a href="#" class="button icon-button post-icon" title="Post a new topic">New Topic</a>
+        <a href="{{ route('topic.create') }}" class="button icon-button post-icon" title="Post a new topic">New Topic</a>
     </div>
     <div class="pagination">
-        {{ count($topics) }} topic • Page <strong>1</strong> of <strong>1</strong>
+        {{ count($topics) . '  ' . str_plural('topic', count($topics)) }}
     </div>
 </div>
 @forelse($topics as $topic)
