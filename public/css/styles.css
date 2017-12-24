@@ -60,3 +60,19 @@ h1 {
 .pagination {
     float: left;
 }
+
+.avatar {
+    border-radius: 50%;
+}
+
+.topiclist .icon {
+    margin-bottom: 0;
+}
+
+.topiclist .topic-by {
+    font-size: 11px;
+}
+
+.topiclist .topic-by a {
+    color: #454545;
+}

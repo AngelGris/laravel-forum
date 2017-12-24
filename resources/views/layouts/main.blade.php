@@ -6,6 +6,7 @@
         <title>{{ config('app.name', 'VanHack Forum') }}</title>
         <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
         @yield('styles')
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.3/css/froala_style.min.css" rel="stylesheet" type="text/css" />
         <link href="{{ asset('/css/stylesheet.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/responsive.css') }}" rel="stylesheet" media="all and (max-width: 700px), all and (max-device-width: 700px)">
         <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -78,7 +79,6 @@
                                 <span class="crumb"><a href="{{ route('index') }}" data-navbar-reference="index">Board index</a></span>
                             </li>
                             <li class="rightside">All times are <abbr title="UTC">UTC</abbr></li>
-                            <li class="small-icon icon-contact rightside" data-last-responsive="true"><a href="#" role="menuitem">Contact us</a></li>
                         </ul>
                     </div>
                 </div>

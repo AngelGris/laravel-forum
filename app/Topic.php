@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Topic extends Model
 {
@@ -23,13 +24,13 @@ class Topic extends Model
     protected $dates = ['last_post'];
 
     /**
-     * Get the owner of the topic
+     * Get the creator of the topic
      *
      * @return User
      */
-    public function owner()
+    public function creator()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**

@@ -61,6 +61,15 @@ $(function() {
                     </dd>
                 </dl>
                 <dl>
+                    <dt><label for="signature">Signature:</label></dt>
+                    <dd>
+                        <input type="text" name="signature" id="signature" size="25" maxlength="100" value="{{ old('signature', $_user['signature']) }}" class="inputbox autowidth" title="Signature" />
+                        @if ($errors->has('signature'))
+                        <br /><span class="error">{{ $errors->first('signature') }}</span>
+                        @endif
+                    </dd>
+                </dl>
+                <dl>
                     <dt><label for="password">Password:</label></dt>
                     <dd><a href="{{ route('profile.password.edit') }}">[Change password]</a></dd>
                 </dl>

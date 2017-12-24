@@ -18,6 +18,10 @@
             <dd>{{ count($user->topics) }} ({{ $user->percentage_topics }}% of all topics / {{ $user->topics_per_day }} topics per day)</dd>
             <dt>Total posts:</dt>
             <dd>{{ count($user->posts) }} ({{ $user->percentage_posts }}% of all posts / {{ $user->posts_per_day }} posts per day)</dd>
+            @if(!empty($user->signature))
+            <dt>Signature:</dt>
+            <dd>{{ $user->signature }}</dd>
+            @endif
         </dl>
     </div>
     <div class="clear"></div>

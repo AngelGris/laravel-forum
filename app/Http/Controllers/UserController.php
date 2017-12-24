@@ -74,6 +74,7 @@ class UserController extends Controller
         $user->last_name = $request->input('last_name');
         $user->user_name = $request->input('user_name');
         $user->email = $request->input('email');
+        $user->signature = (empty($request->input('signature')) ? NULL : $request->input('signature'));
         $user->save();
 
         return redirect()->route('profile')->with('message', 'Profile updated');
