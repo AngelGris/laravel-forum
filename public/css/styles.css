@@ -1,0 +1,58 @@
+body {
+    font-size:12px;
+}
+
+h1 {
+    color: #ebebeb;
+    font-size: 28px;
+    margin-top: 28px;
+}
+
+.close {
+    margin-top: -4px;
+}
+
+.navbar {
+    margin-top: 30px;
+    padding: 0;
+}
+
+.navbar .inner {
+    width: 100%;
+}
+
+.small-icon img {
+    border-radius: 50%;
+    height: 26px;
+}
+
+.time {
+    margin-top: 10px;
+}
+
+.panel {
+    padding: 20px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info img {
+    border-radius: 50%;
+}
+
+.profile-info h3 {
+    border-bottom: none;
+    margin: 0;
+}
+
+#picture-upload {
+    border: solid 1px #000;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+#picture-upload img {
+    width: 20px;
+}
