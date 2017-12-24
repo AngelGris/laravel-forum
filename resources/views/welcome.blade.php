@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-@include('modules.sidebar')
 <div class="action-bar top">
     <div class="buttons">
         <a href="{{ route('topic.create') }}" class="button icon-button post-icon" title="Post a new topic">New Topic</a>

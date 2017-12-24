@@ -8,6 +8,10 @@ h1 {
     margin-top: 28px;
 }
 
+.action-bar {
+    height: 50px;
+}
+
 .close {
     margin-top: -4px;
 }
