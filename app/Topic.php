@@ -42,4 +42,14 @@ class Topic extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * Get last post in this topic
+     *
+     * @return Post
+     */
+    public function getLastPostAttribute()
+    {
+        return $this->posts()->latest()->first();
+    }
 }

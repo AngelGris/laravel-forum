@@ -80,3 +80,7 @@ h1 {
 .postbody .topic-post {
     min-height: 120px;
 }
+
+dl.icon dt .list-inner {
+    padding-left: 10px;
+}
