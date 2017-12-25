@@ -113,3 +113,8 @@ dl.icon dt .list-inner {
 .highlight {
     background-color: #ff0;
 }
+
+.button-reply {
+    float: left;
+    margin-right: 10px;
+}

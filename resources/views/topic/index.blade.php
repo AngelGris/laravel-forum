@@ -49,6 +49,7 @@ $(function() {
     </div>
 </div>
 <div>
+    <a href="#reply-post" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
     {{ $posts->render() }}
     <div class="clear"></div>
 </div>
@@ -79,9 +80,11 @@ $(function() {
 </div>
 @endforeach
 <div>
+    <a href="#reply-post" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
     {{ $posts->render() }}
     <div class="clear"></div>
 </div>
+<a id="reply-post"></a>
 <div class="post bg2">
     <div class="inner">
         <h4>Reply to this topic</h4>
