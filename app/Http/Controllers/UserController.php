@@ -53,6 +53,10 @@ class UserController extends Controller
             $user = Auth::user();
         }
 
+        if ($user->is_administrator) {
+            return redirect()->route('index');
+        }
+
         return view('user.index', ['user' => $user]);
     }
 
