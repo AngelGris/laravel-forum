@@ -1,7 +1,10 @@
 function initWYSIWYG(selector) {
-    $(selector).froalaEditor({
+    tinymce.init({
+        branding : false,
         height : 300,
-        width : '85%',
-        toolbarButtons : ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'color', '|', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', '|', 'emoticons', 'insertHR', 'selectAll', 'clearFormatting', '|', 'undo', 'redo'],
+        menu : {},
+        plugins : ['link', 'media'],
+        selector : selector,
+        toolbar : 'undo redo | bold italic underline strikethrough subscript superscript | link media',
     });
 }

@@ -1,58 +1,64 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Laravel 5 Forum
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Summary
+1. [General dsescription](#generalDescription)
+2. [Installation](#installation)
+3. [Web interface](#webInterface)
+   - [Users](#webInteraceUsers)
+   - [Topics](#webInteraceTopics)
+   - [Posts](#webInteracePosts)
+   - [Search engine](#webInterfaceSearchEngine)
+   - [Online demo](#webInterfaceOnlineDemo)
 
-## About Laravel
+<a name="generalDescription" />
+## General description
+This forum was developed using PHP7, Laravel 5.5, Bootstrap 4 and jQuery 3.2
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Has the basic functions of a forum and was developed as a programming test for VanHack, but can easily be extended and adapted to meet any forum needs.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<a name="installation" />
+## Installation
+1. Clone the repository (https://github.com/AngelGris/laravel-forum)
+2. Create an empty database for this project in your database engine.
+3. Configure the database connection in config/database.php file.
+4. Copy or rename .env.example file to .env and change the database connection configuration there too. Optionally, the application name can be set in the .env file too. (If the application name has more than one word it’s required to enclose them in quotes, i.e. APP_NAME=“My App”)
+5. In a command line window go to the Laravel project folder and update dependencies running `composer update`.
+6. Still in Laravel’s project folder run `php artisan migrate` to create the tables in the database.
+7. Optionally, seed the database by running `php artisan db:seed`. This creates 20 users, 20 topics and 20 posts in each topic.
+8. Now run `php artisan key:generate` to generate a unique encryption key for this Laravel instance.
+9. Change permissions in storage folder to allow Laravel log everything: `sudo chmod -R 777 storage`.
+10. Run `php artisan serve` in the command line to start Laravel server. Now you can enter your web browser and go to `http://localhost:8000` to see it working.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+<a name="webInterface" />
+## Web interface
+The home page shows a button to create a new topic, pagination links (if necessaries) and topics ordered by the last post date, this way topics with the latest posts appear on top.
 
-## Learning Laravel
+Below the topics some basic statistics are shown: total posts, total topics, total members and latest member.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+<a name="webInterfaceUsers" />
+### Users
+Users can register by clicking in the *“Register”* link and completing the registration form. All fields in the for are mandatory. No email validation is sent, but this functionality can be added but this forum was developed with no emailing enabled so all email related functionalities have been dismissed.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+After completing the registration, users can edit their profile in order to change their information, update their password, or add a signature and a profile picture, which are not past of the registration process.
 
-## Laravel Sponsors
+<a name="webInterfaceTopics" />
+### Topics
+Any user can create a new topic. Clicking the *“New Topic”* button in the Board index page shows the form to create a new topic. Only a title and the description of the topic is required for this.
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+Newly cerated topics will appear on top of the topic’s list until another topic is created, or a new post is added to another topic.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+<a name="webInterfacePosts" />
+### Posts
+Entering a topics page you can read all the responses for that topic, or write your own answer in a new post.
 
-## Contributing
+Both, the topic description and the posts creator use Froala WYSIWYG editor to allow text formatting and including links, images or videos.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+<a name="webInterfaceSearchEngine" />
+### Search engine
+The search box in the header allows you to search in topic’s title and description as well as in the posts for particular keywords.
 
-## Security Vulnerabilities
+The results are shown highlighting the words that match your keyword and group in topics and posts. Both groups ordered from newer to older.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+<a name="webInterfaceOnlineDemo" />
+### Online demo
+An online demo can be found at http://35.163.165.1:8080/
