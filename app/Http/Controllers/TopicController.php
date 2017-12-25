@@ -20,9 +20,18 @@ class TopicController extends Controller
     /**
      * Show topic
      */
-    public function index(Topic $topic)
+    public function index(Request $request, Topic $topic)
     {
-        $posts = $topic->posts()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
+        /**
+         * If going to a specific post, get the proper page number
+         */
+        $currentPage = $request->input('page');
+        if (!empty($request->input('post'))) {
+            $position = $topic->posts()->where('id', '<=', $request->input('post'))->count();
+            $currentPage = ceil($position / \Config::get('constants.PAGINATION_PER_PAGE'));
+        }
+
+        $posts = $topic->posts()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'), ['*'], 'page', $currentPage);
         return view('topic.index', [
             'topic' => $topic,
             'posts' => $posts

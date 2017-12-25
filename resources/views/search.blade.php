@@ -34,7 +34,7 @@
                     <div class="inner">
                         <div class="postbody">
                             <div>
-                                <strong><a href="{{ route('profile', $result->author->id) }}" class="username-coloured">{{ $result->author->user_name }}</a></strong> » {{ $result->created_at->format('d M Y, H:i') }} in topic <a href="{{ route('topic', $result->topic->id) }}">{{ $result->topic->title }}</a>
+                                <strong><a href="{{ route('profile', $result->author->id) }}" class="username-coloured">{{ $result->author->user_name }}</a></strong> » {{ $result->created_at->format('d M Y, H:i') }} in topic <a href="{{ route('topic', $result->topic->id) }}?post={{ $result->id }}#post-{{ $result->id }}">{{ $result->topic->title }}</a>
                                 <div class="content fr-view topic-post">{!! $result->post !!}</div>
                             </div>
                         </div>

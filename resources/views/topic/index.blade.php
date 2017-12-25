@@ -53,7 +53,7 @@ $(function() {
     <div class="clear"></div>
 </div>
 @foreach($posts as $post)
-<div class="post has-profile bg2">
+<div id="post-{{ $post->id }}" class="post has-profile bg2">
     <div class="inner">
         <dl class="postprofile">
             <dt class="has-profile-rank has-avatar">
