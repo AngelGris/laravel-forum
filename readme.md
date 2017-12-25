@@ -10,13 +10,13 @@
    - [Search engine](#webInterfaceSearchEngine)
    - [Online demo](#webInterfaceOnlineDemo)
 
-<a name="generalDescription" />
+<a name="generalDescription"></a>
 ## General description
 This forum was developed using PHP7, Laravel 5.5, Bootstrap 4 and jQuery 3.2
 
 Has the basic functions of a forum and was developed as a programming test for VanHack, but can easily be extended and adapted to meet any forum needs.
 
-<a name="installation" />
+<a name="installation"></a>
 ## Installation
 1. Clone the repository (https://github.com/AngelGris/laravel-forum)
 2. Create an empty database for this project in your database engine.
@@ -29,36 +29,36 @@ Has the basic functions of a forum and was developed as a programming test for V
 9. Change permissions in storage folder to allow Laravel log everything: `sudo chmod -R 777 storage`.
 10. Run `php artisan serve` in the command line to start Laravel server. Now you can enter your web browser and go to `http://localhost:8000` to see it working.
 
-<a name="webInterface" />
+<a name="webInterface"></a>
 ## Web interface
 The home page shows a button to create a new topic, pagination links (if necessaries) and topics ordered by the last post date, this way topics with the latest posts appear on top.
 
 Below the topics some basic statistics are shown: total posts, total topics, total members and latest member.
 
-<a name="webInterfaceUsers" />
+<a name="webInterfaceUsers"></a>
 ### Users
 Users can register by clicking in the *“Register”* link and completing the registration form. All fields in the for are mandatory. No email validation is sent, but this functionality can be added but this forum was developed with no emailing enabled so all email related functionalities have been dismissed.
 
 After completing the registration, users can edit their profile in order to change their information, update their password, or add a signature and a profile picture, which are not past of the registration process.
 
-<a name="webInterfaceTopics" />
+<a name="webInterfaceTopics"></a>
 ### Topics
 Any user can create a new topic. Clicking the *“New Topic”* button in the Board index page shows the form to create a new topic. Only a title and the description of the topic is required for this.
 
 Newly cerated topics will appear on top of the topic’s list until another topic is created, or a new post is added to another topic.
 
-<a name="webInterfacePosts" />
+<a name="webInterfacePosts"></a>
 ### Posts
 Entering a topics page you can read all the responses for that topic, or write your own answer in a new post.
 
 Both, the topic description and the posts creator use TinyMCE WYSIWYG editor to allow text formatting and including links, images or videos.
 
-<a name="webInterfaceSearchEngine" />
+<a name="webInterfaceSearchEngine"></a>
 ### Search engine
 The search box in the header allows you to search in topic’s title and description as well as in the posts for particular keywords.
 
 The results are shown highlighting the words that match your keyword and group in topics and posts. Both groups ordered from newer to older.
 
-<a name="webInterfaceOnlineDemo" />
+<a name="webInterfaceOnlineDemo"></a>
 ### Online demo
 An online demo can be found at http://35.163.165.1:8080/
