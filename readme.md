@@ -51,7 +51,7 @@ Newly cerated topics will appear on top of the topic’s list until another topi
 ### Posts
 Entering a topics page you can read all the responses for that topic, or write your own answer in a new post.
 
-Both, the topic description and the posts creator use Froala WYSIWYG editor to allow text formatting and including links, images or videos.
+Both, the topic description and the posts creator use TinyMCE WYSIWYG editor to allow text formatting and including links, images or videos.
 
 <a name="webInterfaceSearchEngine" />
 ### Search engine
