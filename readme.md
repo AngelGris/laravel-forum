@@ -4,9 +4,9 @@
 1. [General dsescription](#generalDescription)
 2. [Installation](#installation)
 3. [Web interface](#webInterface)
-   - [Users](#webInteraceUsers)
-   - [Topics](#webInteraceTopics)
-   - [Posts](#webInteracePosts)
+   - [Users](#webInterfaceUsers)
+   - [Topics](#webInterfaceTopics)
+   - [Posts](#webInterfacePosts)
    - [Search engine](#webInterfaceSearchEngine)
    - [Online demo](#webInterfaceOnlineDemo)
 
