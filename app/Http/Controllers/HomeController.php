@@ -47,8 +47,8 @@ class HomeController extends Controller
      */
     public function search(REQUEST $request)
     {
-        $topics = Topic::where('title', 'LIKE', '%' . $request->input('q') . '%')->whereOr('description', 'LIKE', '%' . $request->input('q') . '%')->get();
-        $posts = Post::where('post', 'LIKE', '%' . $request->input('q') . '%')->get();
+        $topics = Topic::where('title', 'LIKE', '%' . $request->input('q') . '%')->whereOr('description', 'LIKE', '%' . $request->input('q') . '%')->latest()->get();
+        $posts = Post::where('post', 'LIKE', '%' . $request->input('q') . '%')->latest()->get();
 
         $params = [
             'q'         => $request->input('q'),
