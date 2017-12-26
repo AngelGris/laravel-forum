@@ -42,7 +42,7 @@ class User extends Authenticatable
      */
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class)->latest();
     }
 
     /**
@@ -52,7 +52,7 @@ class User extends Authenticatable
      */
     public function topics()
     {
-        return $this->hasMany(Topic::class);
+        return $this->hasMany(Topic::class)->orderBy('last_post', 'DESC');
     }
 
     /**

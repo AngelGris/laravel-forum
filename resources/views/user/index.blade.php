@@ -2,13 +2,7 @@
 
 @section('content')
 <div class="panel bg1 col-12">
-    <div class="col-12 col-sm-3 float-left profile-info">
-        <img src="{{ $user->profile_picture_url }}">
-        <h3>{{ $user->user_name }}</h3>
-        @if($_user->id == $user->id)
-        <a href="{{ route('profile.edit') }}" class="btn">[Edit profile]</a>
-        @endif
-    </div>
+    @include('modules.profile-user')
     <div class="col-12 col-sm-9 float-left">
         <h2>User statistics</h2>
         <dl class="details">

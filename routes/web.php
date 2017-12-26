@@ -14,6 +14,11 @@
 Auth::routes();
 
 Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+Route::prefix('profile')->group(function() {
+    Route::get('/profile/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
+    Route::get('/{user}/topics', ['as' => 'profile.topics', 'uses' => 'UserController@showActivity'])->where('user', '[0-9]+');
+    Route::get('/{user}/posts', ['as' => 'profile.posts', 'uses' => 'UserController@showActivity'])->where('user', '[0-9]+');
+});
 Route::get('/faq', function() {
     return view('faq');
 })->name('faq');
@@ -21,7 +26,6 @@ Route::get('/search', ['as' => 'search', 'uses' => 'HomeController@search']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::prefix('profile')->group(function() {
-        Route::get('/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
         Route::get('/edit', ['as' => 'profile.edit', 'uses' => 'UserController@edit']);
         Route::patch('/edit', 'UserController@update');
         Route::post('/picture', ['as' => 'profile.picture', 'uses' => 'UserController@uploadProfilePicture']);

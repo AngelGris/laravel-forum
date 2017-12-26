@@ -20,8 +20,8 @@ $(function() {
                 </div>
                 <a href="{{ route('profile', $topic->creator->id) }}" class="username-coloured">{{ $topic->creator->user_name }}</a>
             </dt>
-            <dd class="profile-posts"><strong>Topics:</strong> <a href="{{ route('profile', $topic->creator->id) }}">{{ count($topic->creator->topics) }}</a></dd>
-            <dd class="profile-posts"><strong>Posts:</strong> <a href="{{ route('profile', $topic->creator->id) }}">{{ count($topic->creator->posts) }}</a></dd>
+            <dd class="profile-posts"><strong>Topics:</strong> <a href="{{ route('profile.topics', $topic->creator->id) }}">{{ count($topic->creator->topics) }}</a></dd>
+            <dd class="profile-posts"><strong>Posts:</strong> <a href="{{ route('profile.posts', $topic->creator->id) }}">{{ count($topic->creator->posts) }}</a></dd>
             <dd class="profile-joined"><strong>Joined:</strong> {{ $topic->creator->created_at->diffForHumans() }}</dd>
         </dl>
         <div class="postbody">
@@ -30,7 +30,7 @@ $(function() {
                 <p class="author">
                     by <strong><a href="{{ route('profile', $topic->creator->id) }}" class="username-coloured">{{ $topic->creator->user_name }}</a></strong> » {{ $topic->created_at->format('d M Y, H:i') }}
                 </p>
-                <div class="content fr-view">{!! $topic->description !!}</div>
+                <div class="content">{!! $topic->description !!}</div>
                 @if (!empty($topic->creator->signature))
                 <div class="signature">{{ $topic->creator->signature }}</div>
                 @endif
@@ -53,13 +53,13 @@ $(function() {
                 </div>
                 <a href="{{ route('profile', $post->author->id) }}" class="username-coloured">{{ $post->author->user_name }}</a>
             </dt>
-            <dd class="profile-posts"><strong>Topics:</strong> <a href="{{ route('profile', $post->author->id) }}">{{ count($post->author->topics) }}</a></dd>
-            <dd class="profile-posts"><strong>Posts:</strong> <a href="{{ route('profile', $post->author->id) }}">{{ count($post->author->posts) }}</a></dd>
+            <dd class="profile-posts"><strong>Topics:</strong> <a href="{{ route('profile.topics', $post->author->id) }}">{{ count($post->author->topics) }}</a></dd>
+            <dd class="profile-posts"><strong>Posts:</strong> <a href="{{ route('profile.posts', $post->author->id) }}">{{ count($post->author->posts) }}</a></dd>
             <dd class="profile-joined"><strong>Joined:</strong> {{ $post->author->created_at->diffForHumans() }}</dd>
         </dl>
         <div class="postbody">
             <div>
-                <div class="content fr-view topic-post">{!! $post->post !!}</div>
+                <div class="content topic-post">{!! $post->post !!}</div>
                 <div class="signature">
                     {{ $post->author->signature }}<br />
                     by <strong><a href="{{ route('profile', $post->author->id) }}" class="username-coloured">{{ $post->author->user_name }}</a></strong> » {{ $post->created_at->format('d M Y, H:i') }}

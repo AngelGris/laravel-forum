@@ -24,7 +24,7 @@
                             <div>
                                 <strong><a href="{{ route('profile', $result->creator->id) }}" class="username-coloured">{{ $result->creator->user_name }}</a></strong> » {{ $result->created_at->format('d M Y, H:i') }}
                                 <h3><a href="{{ route('topic', $result->id) }}">{!! $result->title !!}</a></h3>
-                                <div class="content fr-view">{!! $result->description !!}</div>
+                                <div class="content">{!! $result->description !!}</div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <div class="postbody">
                             <div>
                                 <strong><a href="{{ route('profile', $result->author->id) }}" class="username-coloured">{{ $result->author->user_name }}</a></strong> » {{ $result->created_at->format('d M Y, H:i') }} in topic <a href="{{ route('topic', $result->topic->id) }}?post={{ $result->id }}#post-{{ $result->id }}">{{ $result->topic->title }}</a>
-                                <div class="content fr-view topic-post">{!! $result->post !!}</div>
+                                <div class="content topic-post">{!! $result->post !!}</div>
                             </div>
                         </div>
                     </div>
