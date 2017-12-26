@@ -37,15 +37,15 @@
                 <div class="navbar" role="navigation">
                     <div class="inner">
                         <ul id="nav-main" class="linklist bulletin" role="menubar">
-                            <li class="small-icon icon-home" data-skip-responsive="true"><a href="{{ route('index') }}" title="Board indes" role="menuitem">Board index</a></li>
-                            <li class="small-icon icon-faq" data-skip-responsive="true"><a href="{{ route('faq') }}" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+                            <li class="small-icon icon-home"><a href="{{ route('index') }}" title="Board indes" role="menuitem">Board index</a></li>
+                            <li class="small-icon icon-faq"><a href="{{ route('faq') }}" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
                             @if (Auth::check())
-                            <li class="small-icon icon-logout rightside"  data-skip-responsive="true"><a href="{{ route('logout') }}" title="Login" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                            <li class="small-icon icon-logout rightside" ><a href="{{ route('logout') }}" title="Login" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-                            <li class="small-icon rightside" data-skip-responsive="true"><a href="{{ route('profile') }}" role="menuitem"><img src="{{ $_user->profile_small_picture_url }}" /> {{ $_user->user_name }}</a></li>
+                            <li class="small-icon rightside"><a href="{{ route('profile') }}" role="menuitem"><img src="{{ $_user->profile_small_picture_url }}" /> {{ $_user->user_name }}</a></li>
                             @else
-                            <li class="small-icon icon-logout rightside"  data-skip-responsive="true"><a href="{{ route('login') }}" title="Login" role="menuitem">Login</a></li>
-                            <li class="small-icon icon-register rightside" data-skip-responsive="true"><a href="{{ route('register') }}" role="menuitem">Register</a></li>
+                            <li class="small-icon icon-logout rightside"><a href="{{ route('login') }}" title="Login" role="menuitem">Login</a></li>
+                            <li class="small-icon icon-register rightside"><a href="{{ route('register') }}" role="menuitem">Register</a></li>
                             @endif
                         </ul>
                         <div class="clear"></div>
@@ -74,7 +74,7 @@
                     <div class="inner">
                         <ul id="nav-footer" class="linklist bulletin" role="menubar">
                             <li class="small-icon icon-home breadcrumbs">
-                                <span class="crumb"><a href="{{ route('index') }}" data-navbar-reference="index">Board index</a></span>
+                                <span class="crumb"><a href="{{ route('index') }}">Board index</a></span>
                             </li>
                             <li class="rightside">All times are <abbr title="UTC">UTC</abbr></li>
                         </ul>

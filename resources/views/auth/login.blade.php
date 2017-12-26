@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<form action="{{ route('login') }}" method="post" id="login" data-focus="username">
+<form action="{{ route('login') }}" method="post" id="login">
     {{ csrf_field() }}
     <div class="panel">
         <div class="inner">
