@@ -15,10 +15,11 @@ Auth::routes();
 
 Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
 Route::prefix('profile')->group(function() {
-    Route::get('/profile/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
+    Route::get('/{user?}', ['as' => 'profile', 'uses' => 'UserController@index'])->where('user', '[0-9]+');
     Route::get('/{user}/topics', ['as' => 'profile.topics', 'uses' => 'UserController@showActivity'])->where('user', '[0-9]+');
     Route::get('/{user}/posts', ['as' => 'profile.posts', 'uses' => 'UserController@showActivity'])->where('user', '[0-9]+');
 });
+Route::get('/topic/{topic}', ['as' => 'topic', 'uses' => 'TopicController@index'])->where('topic', '[0-9]+');
 Route::get('/faq', function() {
     return view('faq');
 })->name('faq');
@@ -35,7 +36,6 @@ Route::group(['middleware' => ['auth']], function() {
     });
 
     Route::prefix('topic')->group(function() {
-        Route::get('/{topic}', ['as' => 'topic', 'uses' => 'TopicController@index'])->where('topic', '[0-9]+');
         Route::get('/create', ['as' => 'topic.create', 'uses' => 'TopicController@create']);
         Route::post('/create', 'TopicController@save');
     });

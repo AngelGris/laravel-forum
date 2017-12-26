@@ -11,25 +11,6 @@ use App\User;
 class UserController extends Controller
 {
     /**
-     * Show user's activity (topics or posts)
-     */
-    public function showActivity(Request $request, User $user)
-    {
-        if ($request->route()->named('profile.topics')) {
-            $type = 'topics';
-            $items = $user->topics()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
-        } else {
-            $type = 'posts';
-            $items = $user->posts()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
-        }
-
-        return view('user.activity', [
-            'user'  => $user,
-            'type'  => $type,
-            'items' => $items
-        ]);
-    }
-    /**
      * Delete user's profile picture
      */
     public function deleteProfilePicture()
@@ -72,11 +53,35 @@ class UserController extends Controller
             $user = Auth::user();
         }
 
-        if ($user->is_administrator) {
-            return redirect()->route('index');
+        if ($user) {
+            if ($user->is_administrator) {
+                return redirect()->route('index');
+            }
+
+            return view('user.index', ['user' => $user]);
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    /**
+     * Show user's activity (topics or posts)
+     */
+    public function showActivity(Request $request, User $user)
+    {
+        if ($request->route()->named('profile.topics')) {
+            $type = 'topics';
+            $items = $user->topics()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
+        } else {
+            $type = 'posts';
+            $items = $user->posts()->paginate(\Config::get('constants.PAGINATION_PER_PAGE'));
         }
 
-        return view('user.index', ['user' => $user]);
+        return view('user.activity', [
+            'user'  => $user,
+            'type'  => $type,
+            'items' => $items
+        ]);
     }
 
     /**

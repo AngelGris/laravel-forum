@@ -39,7 +39,11 @@ $(function() {
     </div>
 </div>
 <div>
+    @if(empty($_user))
+    <a href="{{ route('login') }}" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
+    @else
     <a href="#reply-post" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
+    @endif
     {{ $posts->render() }}
     <div class="clear"></div>
 </div>
@@ -71,11 +75,16 @@ $(function() {
 @endforeach
 @if(count($posts) > 0)
 <div>
+    @if(empty($_user))
+    <a href="{{ route('login') }}" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
+    @else
     <a href="#reply-post" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
+    @endif
     {{ $posts->render() }}
     <div class="clear"></div>
 </div>
 @endif
+@if(!empty($_user))
 <a id="reply-post"></a>
 <div class="post bg2">
     <div class="inner">
@@ -88,4 +97,5 @@ $(function() {
         </form>
     </div>
 </div>
+@endif
 @endsection
