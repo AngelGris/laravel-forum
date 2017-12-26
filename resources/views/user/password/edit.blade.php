@@ -43,7 +43,7 @@
             </fieldset>
             <fieldset class="submit-buttons">
                 <input type="reset" value="Reset" name="reset" class="button2" />&nbsp;
-                <input type="submit" tabindex="9" name="submit" id="submit" value="Submit" class="button1 default-submit-action" />
+                <input type="submit" name="submit" id="submit" value="Submit" class="button1 default-submit-action" />
             </fieldset>
         </form>
     </div>
