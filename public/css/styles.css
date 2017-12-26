@@ -119,6 +119,11 @@ dl.icon dt .list-inner {
     margin-right: 10px;
 }
 
+input[type=submit],
+input[type=reset] {
+    padding: 0 20px !important;
+}
+
 @media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
     .small-icon {
         height: 30px;
