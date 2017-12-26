@@ -42,7 +42,7 @@
                             @if (Auth::check())
                             <li class="small-icon icon-logout rightside" ><a href="{{ route('logout') }}" title="Login" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-                            <li class="small-icon rightside"><a href="{{ route('profile') }}" role="menuitem"><img src="{{ $_user->profile_small_picture_url }}" /> {{ $_user->user_name }}</a></li>
+                            <li class="small-icon small-icon-profile rightside"><a href="{{ route('profile') }}" role="menuitem"><img src="{{ $_user->profile_small_picture_url }}" /> {{ $_user->user_name }}</a></li>
                             @else
                             <li class="small-icon icon-logout rightside"><a href="{{ route('login') }}" title="Login" role="menuitem">Login</a></li>
                             <li class="small-icon icon-register rightside"><a href="{{ route('register') }}" role="menuitem">Register</a></li>

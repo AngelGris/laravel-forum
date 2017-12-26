@@ -118,3 +118,21 @@ dl.icon dt .list-inner {
     float: left;
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+    .small-icon {
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        width: 15px !important;
+    }
+
+    .small-icon-profile {
+        text-align: left !important;
+        width: 26px !important;
+    }
+
+    .small-icon-profile a {
+        padding: 0;
+    }
+}
