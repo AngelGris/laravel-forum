@@ -47,6 +47,13 @@ class LoginController extends Controller
      */
     public function redirectPath()
     {
+        /**
+         * If there's a defined redirectTo, use it
+         */
+        if (!empty(request()->input('redirectTo'))) {
+            $this->redirectTo = request()->input('redirectTo');
+        }
+
         $user = Auth::user();
         session()->flash('message', 'Welcome back <b>' . $user->user_name . '</b>');
 

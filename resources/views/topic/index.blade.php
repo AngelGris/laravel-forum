@@ -40,7 +40,7 @@ $(function() {
 </div>
 <div>
     @if(empty($_user))
-    <a href="{{ route('login') }}" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
+    <a href="{{ route('login') }}?redirectTo={{ urlencode(route('topic', $topic->id)) }}" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
     @else
     <a href="#reply-post" class="button button-reply icon-button reply-icon" title="Post a reply">Post Reply</a>
     @endif

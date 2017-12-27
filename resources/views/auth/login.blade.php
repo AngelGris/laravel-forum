@@ -3,6 +3,9 @@
 @section('content')
 <form action="{{ route('login') }}" method="post" id="login">
     {{ csrf_field() }}
+    @if(!empty(app('request')->input('redirectTo')))
+    <input type="hidden" name="redirectTo" value="{{ urldecode(app('request')->input('redirectTo')) }}" />
+    @endif
     <div class="panel">
         <div class="inner">
             <div class="content">
