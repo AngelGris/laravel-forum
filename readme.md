@@ -9,15 +9,16 @@
    - [Posts](#webInterfacePosts)
    - [Search engine](#webInterfaceSearchEngine)
    - [Online demo](#webInterfaceOnlineDemo)
+4. [Testing](#testing)
 
 <a name="generalDescription"></a>
-## General description
+## 1. General description
 This forum was developed using PHP7, Laravel 5.5, Bootstrap 4 and jQuery 3.2
 
 Has the basic functions of a forum and was developed as a programming test for VanHack, but can easily be extended and adapted to meet any forum needs.
 
 <a name="installation"></a>
-## Installation
+## 2. Installation
 1. Clone the repository (https://github.com/AngelGris/laravel-forum)
 2. Create an empty database for this project in your database engine.
 3. Configure the database connection in config/database.php file.
@@ -30,7 +31,7 @@ Has the basic functions of a forum and was developed as a programming test for V
 10. Run `php artisan serve` in the command line to start Laravel server. Now you can enter your web browser and go to `http://localhost:8000` to see it working.
 
 <a name="webInterface"></a>
-## Web interface
+## 3. Web interface
 The home page shows a button to create a new topic, pagination links (if necessaries) and topics ordered by the last post date, this way topics with the latest posts appear on top.
 
 Below the topics some basic statistics are shown: total posts, total topics, total members and latest member.
@@ -62,3 +63,11 @@ The results are shown highlighting the words that match your keyword and group i
 <a name="webInterfaceOnlineDemo"></a>
 ### Online demo
 An online demo can be found at http://35.163.165.1:8080/
+
+<a name="testing"></a>
+## 4. Testing
+Laravel includes PHPUnit for testing, and this project has code for testing the responses to different requests.
+
+To run the test cases for Laravel open a command line prompt, go to the project folder and `run ./vendor/bin/phpunit`
+
+Laravel tests for response codes on the different URLs and views display.
