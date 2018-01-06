@@ -11,5 +11,5 @@ npm-debug.log
 yarn-error.log
 .env
 
-/public/img/logo/*
-!/public/img/logo/.gitkeep
+/public/img/profile/*
+!/public/img/profile/.gitkeep
